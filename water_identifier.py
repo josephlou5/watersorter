@@ -27,7 +27,14 @@ DEBUG = False
 
 # =============================================================================
 
-COLORS_FILE = Path('colors.json')
+
+def _in_range(value, range_):
+    return range_[0] <= value <= range_[1]
+
+
+# =============================================================================
+
+COLORS_FILE = Path("colors.json")
 
 
 def read_colors_file():
@@ -37,15 +44,16 @@ def read_colors_file():
         invalid_rgb_value_msg = f'invalid rgb value for color "{color}"'
         rgb = tuple(rgb)
         if len(rgb) != 3:
-            raise ValueError(f'{invalid_rgb_value_msg}: not length 3')
+            raise ValueError(f"{invalid_rgb_value_msg}: not length 3")
         for val in rgb:
             if not isinstance(val, int):
-                raise ValueError(f'{invalid_rgb_value_msg}: not ints')
+                raise ValueError(f"{invalid_rgb_value_msg}: not ints")
             if not _in_range(val, (0, 255)):
                 raise ValueError(
-                    f'{invalid_rgb_value_msg}: not in range [0, 255]')
+                    f"{invalid_rgb_value_msg}: not in range [0, 255]"
+                )
         if rgb in colors:
-            raise ValueError(f'rgb value {rgb} is repeated in colors file')
+            raise ValueError(f"rgb value {rgb} is repeated in colors file")
         colors[rgb] = color
     return colors
 
@@ -63,10 +71,6 @@ TUBE_MIN_WIDTH = 125
 # =============================================================================
 
 
-def _in_range(value, range_):
-    return range_[0] <= value <= range_[1]
-
-
 def is_background(rgb):
     return all(val <= BACKGROUND_CUTOFF for val in rgb)
 
@@ -77,7 +81,8 @@ def is_border(rgb):
 
 def same_color(rgb1, rgb2):
     return all(
-        abs(val1 - val2) <= SAME_COLOR_ERROR for val1, val2 in zip(rgb1, rgb2))
+        abs(val1 - val2) <= SAME_COLOR_ERROR for val1, val2 in zip(rgb1, rgb2)
+    )
 
 
 def avg_color(colors):
@@ -101,7 +106,7 @@ def show_image_from_array(colors):
     """
     height = len(colors)
     width = len(colors[0])
-    im = Image.new('RGB', (width, height))
+    im = Image.new("RGB", (width, height))
     flattened = []
     for row in colors:
         for rgb in row:
@@ -118,6 +123,7 @@ def show_image_from_array(colors):
 
 class PixelType(Enum):
     """The pixel types."""
+
     BACKGROUND = 1
     BORDER = 2
     COLOR = 3
@@ -137,7 +143,8 @@ def group_by_type(row):
     pixels in the group.
     """
     for pixel_type, group in itertools.groupby(
-            enumerate(row), key=lambda x: PixelType.from_rgb(x[1])):
+        enumerate(row), key=lambda x: PixelType.from_rgb(x[1])
+    ):
         index_pixels = list(group)
         c, _ = index_pixels[0]
         pixels = [pixel for _, pixel in index_pixels]
@@ -193,7 +200,7 @@ def crop_borders(colors):
                 first_border_row = r
             last_border_row = r
     if first_border_row is not None:
-        return colors[first_border_row:last_border_row + 1]
+        return colors[first_border_row : last_border_row + 1]
     return colors
 
 
@@ -270,7 +277,7 @@ def extract_tubes(colors):
 
                 avg_rgb = avg_color(pixels)
                 if r > 0:
-                    above_rgb = avg_color(colors[r - 1][c:c + len(pixels)])
+                    above_rgb = avg_color(colors[r - 1][c : c + len(pixels)])
                     if is_border(above_rgb):
                         # first row inside the tube
                         pass
@@ -307,7 +314,7 @@ def extract_tubes(colors):
             slot_transition_transparent = True
 
             if DEBUG and len(line_slot_colors) > 0:
-                print('slot transition at row', r)
+                print("slot transition at row", r)
                 # highlight the left side with cyan
                 for c in range(3):
                     testing[r][c] = (0, 255, 255)
@@ -347,17 +354,18 @@ def extract_tubes(colors):
     if DEBUG:
         show_image_from_array(testing)
 
-        # print colors with ids rather than rgbs to make it easier to
+        # print colors with ids rather than RGBs to make it easier to
         # read
-        print('all colors:', index_to_color)
-        print('all tubes:')
+        print("all colors:", index_to_color)
+        print("all tubes:")
         for i, tube in enumerate(all_tubes):
             print(i, len(tube), [unique_colors[rgb] for rgb in tube])
 
         # show a tiny version of the tubes just to double check
-        tube_colors = [[(0, 0, 0)
-                        for _ in range(2 * len(all_tubes) - 1)]
-                       for _ in range(len(all_tubes[0]))]
+        tube_colors = [
+            [(0, 0, 0) for _ in range(2 * len(all_tubes) - 1)]
+            for _ in range(len(all_tubes[0]))
+        ]
         for i, tube in enumerate(all_tubes):
             for j, rgb in enumerate(tube):
                 if rgb is None:
@@ -374,19 +382,21 @@ def extract_tubes(colors):
 def main():
     _, *args = sys.argv
     if len(args) == 0:
-        print('Missing filename')
+        print("Missing filename")
         sys.exit(1)
     filename = args[0]
 
     if DEBUG:
-        print('WARNING: debug mode is on, so the output cannot be used as '
-              'input to `water_sorter.py`')
+        print(
+            "WARNING: debug mode is on, so the output cannot be used as input "
+            "to `water_sorter.py`"
+        )
 
     colors = crop_borders(load_image_colors(filename))
     tube_colors = extract_tubes(colors)
 
     if len(tube_colors) == 0:
-        print('Could not extract the colors from the screenshot')
+        print("Could not extract the colors from the screenshot")
         sys.exit(1)
 
     # convert the rgb colors to their names
@@ -396,26 +406,26 @@ def main():
         tube_color_names = []
         for rgb in tube:
             if rgb is None:
-                tube_color_names.append('')
+                tube_color_names.append("")
                 continue
             if rgb not in COLORS:
                 added_color = True
                 i = 0
                 while True:
-                    name = f'newColor{i}'
+                    name = f"newColor{i}"
                     if name not in color_names:
                         break
                     i += 1
                 color_names.add(name)
                 COLORS[rgb] = name
             tube_color_names.append(COLORS[rgb])
-        print(','.join(tube_color_names))
+        print(",".join(tube_color_names))
 
     if added_color:
         # write the new color names to the colors file
         data = {color: rgb for rgb, color in COLORS.items()}
-        COLORS_FILE.write_text(json.dumps(data, indent=2), encoding='utf-8')
+        COLORS_FILE.write_text(json.dumps(data, indent=2), encoding="utf-8")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

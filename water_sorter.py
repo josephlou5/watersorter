@@ -75,8 +75,9 @@ class Tubes:
         def copy(self):
             return self.__class__(self._state)
 
-    def __init__(self, parent, move_from_parent, num_tubes, colors, indices,
-                 tubes):
+    def __init__(
+        self, parent, move_from_parent, num_tubes, colors, indices, tubes
+    ):
         self._parent = parent
         self._move_from_parent = move_from_parent
         self._num_tubes = num_tubes
@@ -89,7 +90,7 @@ class Tubes:
 
     @classmethod
     def initialize(cls, tube_colors):
-        index_to_color = {Tubes.EMPTY: ''}
+        index_to_color = {Tubes.EMPTY: ""}
         color_to_index = {}
         counts = defaultdict(lambda: 0)
         tubes = []
@@ -100,14 +101,17 @@ class Tubes:
                 continue
             if len(colors) != Tubes.CAPACITY:
                 raise ValueError(
-                    f'tube {i+1} must have {Tubes.CAPACITY} colors')
+                    f"tube {i+1} must have {Tubes.CAPACITY} colors"
+                )
             tube = []
             seen_color = False
             for color in colors:
-                if color == '':
+                if color == "":
                     if seen_color:
-                        raise ValueError(f'tube {i+1} has an empty space '
-                                         f'under a color: {colors}')
+                        raise ValueError(
+                            f"tube {i+1} has an empty space under a color: "
+                            f"{colors}"
+                        )
                     tube.append(Tubes.EMPTY)
                     continue
                 if isinstance(color, str):
@@ -115,8 +119,10 @@ class Tubes:
                 seen_color = True
                 counts[color] += 1
                 if counts[color] > Tubes.CAPACITY:
-                    raise ValueError(f'color "{color}" appears more than '
-                                     f'{Tubes.CAPACITY} times')
+                    raise ValueError(
+                        f"color {color!r} appears more than {Tubes.CAPACITY} "
+                        "times"
+                    )
                 if color not in color_to_index:
                     index = len(index_to_color)
                     index_to_color[index] = color
@@ -125,28 +131,30 @@ class Tubes:
             tubes.append(Tubes.Tube(tube))
         for color, count in counts.items():
             if count < Tubes.CAPACITY:
-                raise ValueError(f'color "{color}" does not appear '
-                                 f'{Tubes.CAPACITY} times')
-        return cls(None, None, len(tubes), index_to_color, color_to_index,
-                   tubes)
+                raise ValueError(
+                    f"color {color!r} does not appear {Tubes.CAPACITY} times"
+                )
+        return cls(
+            None, None, len(tubes), index_to_color, color_to_index, tubes
+        )
 
     def __str__(self):
         rows = [[] for _ in range(2 + Tubes.CAPACITY)]
         for i, tube in enumerate(self._tubes):
-            col = [str(i + 1), '']
+            col = [str(i + 1), ""]
             for index in tube:
                 col.append(str(self._colors[index]))
             width = max(len(c) for c in col)
-            col[1] = '-' * width
+            col[1] = "-" * width
             for r, row in enumerate(rows):
                 row.append(col[r].center(width))
-        return '\n'.join('  '.join(row) for row in rows)
+        return "\n".join("  ".join(row) for row in rows)
 
     def __repr__(self):
         tube_colors = tuple(
-            tuple(self._colors[index]
-                  for index in tube)
-            for tube in self._tubes)
+            tuple(self._colors[index] for index in tube)
+            for tube in self._tubes
+        )
         return str(tube_colors)
 
     def _check_solved(self):
@@ -199,7 +207,8 @@ class Tubes:
             # no need to copy the color and index dicts
             self._colors,
             self._indices,
-            self._tubes)
+            self._tubes,
+        )
 
     def set(self, index, tube):
         self._tubes[index] = tube
@@ -207,37 +216,40 @@ class Tubes:
 
     def pour(self, tube_from, tube_to):
         if tube_from == tube_to:
-            raise PourException('cannot pour from and to same tube')
+            raise PourException("cannot pour from and to same tube")
         # find the first non-empty, which is the color being poured
         i_from = 0
         while self._tubes[tube_from][i_from] == Tubes.EMPTY:
             i_from += 1
             if i_from >= Tubes.CAPACITY:
-                raise PourException('cannot pour from empty tube')
+                raise PourException("cannot pour from empty tube")
         moving_color = self._tubes[tube_from][i_from]
         # find the first non-empty, which is where to pour into
         i_to = Tubes.CAPACITY - 1
         while self._tubes[tube_to][i_to] != Tubes.EMPTY:
             i_to -= 1
             if i_to < 0:
-                raise PourException('cannot pour into full tube')
+                raise PourException("cannot pour into full tube")
         if i_to == Tubes.CAPACITY - 1:
             # the entire tube is empty
             pass
         elif self._tubes[tube_to][i_to + 1] != moving_color:
-            raise PourException('cannot pour on a different color')
+            raise PourException("cannot pour on a different color")
         # pour colors
         new_from = self._tubes[tube_from].copy()
         new_to = self._tubes[tube_to].copy()
-        while (i_from < Tubes.CAPACITY and i_to >= 0 and
-               new_from[i_from] == moving_color):
+        while (
+            i_from < Tubes.CAPACITY
+            and i_to >= 0
+            and new_from[i_from] == moving_color
+        ):
             new_from[i_from] = Tubes.EMPTY
             new_to[i_to] = moving_color
             i_from += 1
             i_to -= 1
         if i_from == Tubes.CAPACITY:
             # poured a full tube, which is unnecessary
-            raise PourException('no need to pour a full tube')
+            raise PourException("no need to pour a full tube")
         new_tubes = self.copy((tube_from, tube_to))
         new_tubes.set(tube_from, new_from)
         new_tubes.set(tube_to, new_to)
@@ -288,7 +300,7 @@ class Game:
         return str(self._tubes)
 
     def __repr__(self):
-        return f'Game({repr(self._tubes)})'
+        return f"Game({repr(self._tubes)})"
 
     @property
     def tubes(self):
@@ -297,10 +309,10 @@ class Game:
     def solve(self):
         if self._solved:
             return
-        print('Solving...')
+        print("Solving...")
         solved = _bfs(self._tubes)
         if solved is None:
-            raise RuntimeError('could not find a solution for the given game')
+            raise RuntimeError("Could not find a solution for the given game")
         # retrieve steps by walking up the parent tree
         steps = []
         tubes = solved
@@ -317,15 +329,15 @@ class Game:
         if not self._solved:
             self.solve()
         start, *steps = self._steps
-        print('Start:')
+        print("Start:")
         print(start)
         for i, step in enumerate(steps):
             print()
             tube_from, tube_to = step.move_from_parent
-            print(f'Step {i+1}: Pour tube {tube_from+1} into tube {tube_to+1}')
+            print(f"Step {i+1}: Pour tube {tube_from+1} into tube {tube_to+1}")
             print(step)
         print()
-        print('Num moves:', self._num_moves)
+        print("Num moves:", self._num_moves)
 
 
 # =============================================================================
@@ -335,18 +347,22 @@ def main():
     tube_colors = []
     for line in sys.stdin:
         line = line.strip()
-        if line == '':
+        if line == "":
             tube_colors.append([])
             continue
-        tube_colors.append([color.strip() for color in line.split(',')])
+        tube_colors.append([color.strip() for color in line.split(",")])
     if len(tube_colors) == 0:
-        print('No tube colors given')
+        print("No tube colors given")
         return
 
     game = Game(tube_colors)
-    game.solve()
+    try:
+        game.solve()
+    except RuntimeError as e:
+        print(e)
+        sys.exit(1)
     game.print_moves()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
