@@ -1,0 +1,11 @@
+purple,red,sky,blue
+purple,blue,orange,mint
+orange,green,mint,purple
+pink,pink,purple,mint
+gray,green,gray,sky
+blue,orange,pink,red
+red,orange,green,green
+blue,gray,pink,gray
+sky,sky,mint,red
+,,,
+,,,
