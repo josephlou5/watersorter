@@ -21,6 +21,10 @@ from queue import SimpleQueue as Queue
 
 # =============================================================================
 
+DEBUG = False
+
+# =============================================================================
+
 
 class PourException(Exception):
     """An error that occurs while trying to pour."""
@@ -236,6 +240,7 @@ class Tubes:
         elif self._tubes[tube_to][i_to + 1] != moving_color:
             raise PourException("cannot pour on a different color")
         # pour colors
+        i_from_start = i_from
         new_from = self._tubes[tube_from].copy()
         new_to = self._tubes[tube_to].copy()
         while (
@@ -247,8 +252,15 @@ class Tubes:
             new_to[i_to] = moving_color
             i_from += 1
             i_to -= 1
-        if i_from == Tubes.CAPACITY:
+        if i_from_start == 0 and i_from == Tubes.CAPACITY:
             # poured a full tube, which is unnecessary
+            if DEBUG:
+                print(
+                    f"{tube_from}-{tube_to}: bad pour: no need to pour a full tube"
+                )
+                print("tubes[tube_from] =", self._tubes[tube_from]._state)
+                print("tubes[tube_to] =", self._tubes[tube_to]._state)
+                print(f"{i_from=}, {i_to=}")
             raise PourException("no need to pour a full tube")
         new_tubes = self.copy((tube_from, tube_to))
         new_tubes.set(tube_from, new_from)
@@ -269,8 +281,15 @@ def _bfs(start_tubes):
     seen = set()
     queue = Queue()
     queue.put(start_tubes)
+    i = 0
     while not queue.empty():
         tubes = queue.get()
+        if DEBUG:
+            print("=" * 100)
+            print(f"trying [{i}]:")
+            i += 1
+            print(tubes)
+            print()
         # attempt all possible moves
         for tube_from in range(tubes.num_tubes):
             for tube_to in range(tubes.num_tubes):
@@ -279,11 +298,20 @@ def _bfs(start_tubes):
                 except PourException:
                     # can't pour or bad pour, so skip
                     continue
+                if DEBUG:
+                    print(f"poured {tube_from} to {tube_to}:")
+                    print(poured)
                 if poured.is_solved:
                     return poured
                 if poured not in seen:
+                    if DEBUG:
+                        print("added")
                     seen.add(poured)
                     queue.put(poured)
+                elif DEBUG:
+                    print("seen before")
+                if DEBUG:
+                    print()
     return None
 
 
