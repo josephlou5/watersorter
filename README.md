@@ -27,3 +27,15 @@ colors can be given names in `colors.json`, where the keys are the color names
 and the values are arrays of length 3. Any new colors seen in
 `water_identifier.py` will be added to `colors.json`, where the user may rename
 them as they please.
+
+## Notes
+
+As this is a BFS solver, it takes a very long time. Also, there are technically
+no guarantees about the solvability of any given puzzle.
+
+Here is a list of puzzles that the current solver did not find a solution for
+(the program ran for hours and didn't produce an output):
+
+- [`level183.txt`](levels/level183.txt)
+- [`level187.txt`](levels/level187.txt)
+- [`level189.txt`](levels/level189.txt)
