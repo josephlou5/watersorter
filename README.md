@@ -32,10 +32,3 @@ them as they please.
 
 As this is a BFS solver, it takes a very long time. Also, there are technically
 no guarantees about the solvability of any given puzzle.
-
-Here is a list of puzzles that the current solver did not find a solution for
-(the program ran for hours and didn't produce an output):
-
-- [`level183.txt`](levels/level183.txt)
-- [`level187.txt`](levels/level187.txt)
-- [`level189.txt`](levels/level189.txt)

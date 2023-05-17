@@ -17,6 +17,7 @@ Example run:
 
 import sys
 from collections import defaultdict
+from functools import total_ordering
 from queue import SimpleQueue as Queue
 
 # =============================================================================
@@ -41,6 +42,7 @@ class Tubes:
     # A placeholder value for when a color doesn't exist in a slot
     EMPTY = -1
 
+    @total_ordering
     class Tube:
         """Representation of a tube."""
 
@@ -58,6 +60,9 @@ class Tubes:
             # update the hash
             self._hash_value = hash(tuple(self._state))
 
+        def __repr__(self):
+            return str(tuple(self._state))
+
         def __iter__(self):
             return iter(self._state)
 
@@ -65,6 +70,13 @@ class Tubes:
             if self is other:
                 return True
             return self._state == other._state
+
+        def __lt__(self, other):
+            for x, y in zip(self._state, other._state):
+                if x == y:
+                    continue
+                return x < y
+            return False
 
         def __hash__(self):
             return self._hash_value
@@ -88,6 +100,7 @@ class Tubes:
         self._colors = colors
         self._indices = indices
         self._tubes = list(tubes)
+        self._ordered_tubes = None
         self._hash_value = None
         self._is_solved = False
         self._on_change()
@@ -171,8 +184,12 @@ class Tubes:
 
     def _on_change(self):
         """Triggers updates to the object when it changes."""
+        # update the ordered tubes
+        self._ordered_tubes = sorted(self._tubes)
         # update the hash
-        self._hash_value = hash(tuple(hash(tube) for tube in self._tubes))
+        self._hash_value = hash(
+            tuple(hash(tube) for tube in self._ordered_tubes)
+        )
         # check if it's solved
         self._is_solved = self._check_solved()
 
@@ -182,7 +199,7 @@ class Tubes:
     def __eq__(self, other):
         if self is other:
             return True
-        return self._tubes == other._tubes
+        return self._ordered_tubes == other._ordered_tubes
 
     def __hash__(self):
         return self._hash_value
@@ -256,8 +273,10 @@ class Tubes:
             # poured a full tube, which is unnecessary
             if DEBUG:
                 print(
-                    f"{tube_from}-{tube_to}: bad pour: no need to pour a full tube"
+                    f"{tube_from}-{tube_to}: bad pour: no need to pour a full "
+                    "tube"
                 )
+                # pylint: disable=protected-access
                 print("tubes[tube_from] =", self._tubes[tube_from]._state)
                 print("tubes[tube_to] =", self._tubes[tube_to]._state)
                 print(f"{i_from=}, {i_to=}")
