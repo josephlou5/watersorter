@@ -1,0 +1,314 @@
+Solving...
+Start:
+  1       2       3      4       5       6       7       8       9       10      11     12    13  14
+------  ------  -----  ------  ------  ------  ------  ------  ------  ------  -----  ------  --  --
+Forest  Green    Gray  Purple  Brown    Sky    Purple  Forest  Purple  Orange  Brown   Pink         
+ Blue   Orange   Mint   Blue   Forest  Yellow   Red     Blue   Green    Sky     Pink   Sky          
+ Pink   Green   Brown  Forest   Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow        
+ Red     Mint    Pink  Brown    Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange        
+
+Step 1: Pour tube 1 into tube 13
+ 1      2       3      4       5       6       7       8       9       10      11     12      13    14
+----  ------  -----  ------  ------  ------  ------  ------  ------  ------  -----  ------  ------  --
+      Green    Gray  Purple  Brown    Sky    Purple  Forest  Purple  Orange  Brown   Pink             
+Blue  Orange   Mint   Blue   Forest  Yellow   Red     Blue   Green    Sky     Pink   Sky              
+Pink  Green   Brown  Forest   Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow            
+Red    Mint    Pink  Brown    Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest    
+
+Step 2: Pour tube 1 into tube 14
+ 1      2       3      4       5       6       7       8       9       10      11     12      13     14 
+----  ------  -----  ------  ------  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray  Purple  Brown    Sky    Purple  Forest  Purple  Orange  Brown   Pink               
+      Orange   Mint   Blue   Forest  Yellow   Red     Blue   Green    Sky     Pink   Sky                
+Pink  Green   Brown  Forest   Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow              
+Red    Mint    Pink  Brown    Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 3: Pour tube 8 into tube 13
+ 1      2       3      4       5       6       7       8       9       10      11     12      13     14 
+----  ------  -----  ------  ------  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray  Purple  Brown    Sky    Purple          Purple  Orange  Brown   Pink               
+      Orange   Mint   Blue   Forest  Yellow   Red     Blue   Green    Sky     Pink   Sky                
+Pink  Green   Brown  Forest   Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest      
+Red    Mint    Pink  Brown    Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 4: Pour tube 8 into tube 14
+ 1      2       3      4       5       6       7       8       9       10      11     12      13     14 
+----  ------  -----  ------  ------  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray  Purple  Brown    Sky    Purple          Purple  Orange  Brown   Pink               
+      Orange   Mint   Blue   Forest  Yellow   Red            Green    Sky     Pink   Sky                
+Pink  Green   Brown  Forest   Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown    Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 5: Pour tube 4 into tube 8
+ 1      2       3      4       5       6       7       8       9       10      11     12      13     14 
+----  ------  -----  ------  ------  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray          Brown    Sky    Purple          Purple  Orange  Brown   Pink               
+      Orange   Mint   Blue   Forest  Yellow   Red    Purple  Green    Sky     Pink   Sky                
+Pink  Green   Brown  Forest   Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown    Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 6: Pour tube 4 into tube 14
+ 1      2       3      4       5       6       7       8       9       10      11     12      13     14 
+----  ------  -----  ------  ------  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray          Brown    Sky    Purple          Purple  Orange  Brown   Pink               
+      Orange   Mint          Forest  Yellow   Red    Purple  Green    Sky     Pink   Sky            Blue
+Pink  Green   Brown  Forest   Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown    Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 7: Pour tube 4 into tube 13
+ 1      2       3      4      5       6       7       8       9       10      11     12      13     14 
+----  ------  -----  -----  ------  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray         Brown    Sky    Purple          Purple  Orange  Brown   Pink               
+      Orange   Mint         Forest  Yellow   Red    Purple  Green    Sky     Pink   Sky    Forest  Blue
+Pink  Green   Brown          Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown   Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 8: Pour tube 5 into tube 4
+ 1      2       3      4      5       6       7       8       9       10      11     12      13     14 
+----  ------  -----  -----  ------  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray                  Sky    Purple          Purple  Orange  Brown   Pink               
+      Orange   Mint         Forest  Yellow   Red    Purple  Green    Sky     Pink   Sky    Forest  Blue
+Pink  Green   Brown  Brown   Red     Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown   Mint   Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 9: Pour tube 5 into tube 13
+ 1      2       3      4     5      6       7       8       9       10      11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray                Sky    Purple          Purple  Orange  Brown   Pink   Forest      
+      Orange   Mint               Yellow   Red    Purple  Green    Sky     Pink   Sky    Forest  Blue
+Pink  Green   Brown  Brown  Red    Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 10: Pour tube 7 into tube 8
+ 1      2       3      4     5      6       7       8       9       10      11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray                Sky            Purple  Purple  Orange  Brown   Pink   Forest      
+      Orange   Mint               Yellow   Red    Purple  Green    Sky     Pink   Sky    Forest  Blue
+Pink  Green   Brown  Brown  Red    Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 11: Pour tube 5 into tube 7
+ 1      2       3      4     5      6       7       8       9       10      11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  -----  ------  ------  ----
+      Green    Gray                Sky     Red    Purple  Purple  Orange  Brown   Pink   Forest      
+      Orange   Mint               Yellow   Red    Purple  Green    Sky     Pink   Sky    Forest  Blue
+Pink  Green   Brown  Brown         Gray   Yellow  Purple  Green    Sky     Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray    Gray  Orange  Forest  Blue
+
+Step 12: Pour tube 11 into tube 4
+ 1      2       3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+      Green    Gray                Sky     Red    Purple  Purple  Orange         Pink   Forest      
+      Orange   Mint  Brown        Yellow   Red    Purple  Green    Sky    Pink   Sky    Forest  Blue
+Pink  Green   Brown  Brown         Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 13: Pour tube 11 into tube 1
+ 1      2       3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+      Green    Gray                Sky     Red    Purple  Purple  Orange         Pink   Forest      
+Pink  Orange   Mint  Brown        Yellow   Red    Purple  Green    Sky           Sky    Forest  Blue
+Pink  Green   Brown  Brown         Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 14: Pour tube 7 into tube 11
+ 1      2       3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+      Green    Gray                Sky            Purple  Purple  Orange  Red    Pink   Forest      
+Pink  Orange   Mint  Brown        Yellow          Purple  Green    Sky    Red    Sky    Forest  Blue
+Pink  Green   Brown  Brown         Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 15: Pour tube 12 into tube 1
+ 1      2       3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+Pink  Green    Gray                Sky            Purple  Purple  Orange  Red           Forest      
+Pink  Orange   Mint  Brown        Yellow          Purple  Green    Sky    Red    Sky    Forest  Blue
+Pink  Green   Brown  Brown         Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 16: Pour tube 6 into tube 12
+ 1      2       3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+Pink  Green    Gray                               Purple  Purple  Orange  Red    Sky    Forest      
+Pink  Orange   Mint  Brown        Yellow          Purple  Green    Sky    Red    Sky    Forest  Blue
+Pink  Green   Brown  Brown         Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 17: Pour tube 6 into tube 7
+ 1      2       3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+Pink  Green    Gray                               Purple  Purple  Orange  Red    Sky    Forest      
+Pink  Orange   Mint  Brown                Yellow  Purple  Green    Sky    Red    Sky    Forest  Blue
+Pink  Green   Brown  Brown         Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 18: Pour tube 3 into tube 6
+ 1      2       3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+Pink  Green                                       Purple  Purple  Orange  Red    Sky    Forest      
+Pink  Orange   Mint  Brown         Gray   Yellow  Purple  Green    Sky    Red    Sky    Forest  Blue
+Pink  Green   Brown  Brown         Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 19: Pour tube 3 into tube 5
+ 1      2       3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  -----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+Pink  Green                                       Purple  Purple  Orange  Red    Sky    Forest      
+Pink  Orange         Brown         Gray   Yellow  Purple  Green    Sky    Red    Sky    Forest  Blue
+Pink  Green   Brown  Brown  Mint   Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint    Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 20: Pour tube 3 into tube 4
+ 1      2      3      4     5      6       7       8       9       10     11     12      13     14 
+----  ------  ----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+Pink  Green         Brown                        Purple  Purple  Orange  Red    Sky    Forest      
+Pink  Orange        Brown         Gray   Yellow  Purple  Green    Sky    Red    Sky    Forest  Blue
+Pink  Green         Brown  Mint   Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red    Mint   Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 21: Pour tube 1 into tube 3
+ 1     2      3      4     5      6       7       8       9       10     11     12      13     14 
+---  ------  ----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+     Green   Pink  Brown                        Purple  Purple  Orange  Red    Sky    Forest      
+     Orange  Pink  Brown         Gray   Yellow  Purple  Green    Sky    Red    Sky    Forest  Blue
+     Green   Pink  Brown  Mint   Gray   Yellow  Purple  Green    Sky    Red   Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 22: Pour tube 11 into tube 1
+ 1     2      3      4     5      6       7       8       9       10     11     12      13     14 
+---  ------  ----  -----  ----  ------  ------  ------  ------  ------  ----  ------  ------  ----
+Red  Green   Pink  Brown                        Purple  Purple  Orange         Sky    Forest      
+Red  Orange  Pink  Brown         Gray   Yellow  Purple  Green    Sky           Sky    Forest  Blue
+Red  Green   Pink  Brown  Mint   Gray   Yellow  Purple  Green    Sky          Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray   Gray  Orange  Forest  Blue
+
+Step 23: Pour tube 11 into tube 6
+ 1     2      3      4     5      6       7       8       9       10    11    12      13     14 
+---  ------  ----  -----  ----  ------  ------  ------  ------  ------  --  ------  ------  ----
+Red  Green   Pink  Brown         Gray           Purple  Purple  Orange       Sky    Forest      
+Red  Orange  Pink  Brown         Gray   Yellow  Purple  Green    Sky         Sky    Forest  Blue
+Red  Green   Pink  Brown  Mint   Gray   Yellow  Purple  Green    Sky        Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Mint  Orange  Yellow   Mint    Blue    Gray       Orange  Forest  Blue
+
+Step 24: Pour tube 8 into tube 11
+ 1     2      3      4     5      6       7      8      9       10      11      12      13     14 
+---  ------  ----  -----  ----  ------  ------  ----  ------  ------  ------  ------  ------  ----
+Red  Green   Pink  Brown         Gray                 Purple  Orange           Sky    Forest      
+Red  Orange  Pink  Brown         Gray   Yellow        Green    Sky    Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown  Mint   Gray   Yellow        Green    Sky    Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Mint  Orange  Yellow  Mint   Blue    Gray   Purple  Orange  Forest  Blue
+
+Step 25: Pour tube 5 into tube 8
+ 1     2      3      4    5    6       7      8      9       10      11      12      13     14 
+---  ------  ----  -----  -  ------  ------  ----  ------  ------  ------  ------  ------  ----
+Red  Green   Pink  Brown      Gray                 Purple  Orange           Sky    Forest      
+Red  Orange  Pink  Brown      Gray   Yellow  Mint  Green    Sky    Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown      Gray   Yellow  Mint  Green    Sky    Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown     Orange  Yellow  Mint   Blue    Gray   Purple  Orange  Forest  Blue
+
+Step 26: Pour tube 2 into tube 5
+ 1     2      3      4      5      6       7      8      9       10      11      12      13     14 
+---  ------  ----  -----  -----  ------  ------  ----  ------  ------  ------  ------  ------  ----
+Red          Pink  Brown          Gray                 Purple  Orange           Sky    Forest      
+Red  Orange  Pink  Brown          Gray   Yellow  Mint  Green    Sky    Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown          Gray   Yellow  Mint  Green    Sky    Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Green  Orange  Yellow  Mint   Blue    Gray   Purple  Orange  Forest  Blue
+
+Step 27: Pour tube 9 into tube 11
+ 1     2      3      4      5      6       7      8      9      10      11      12      13     14 
+---  ------  ----  -----  -----  ------  ------  ----  -----  ------  ------  ------  ------  ----
+Red          Pink  Brown          Gray                        Orange  Purple   Sky    Forest      
+Red  Orange  Pink  Brown          Gray   Yellow  Mint  Green   Sky    Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown          Gray   Yellow  Mint  Green   Sky    Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Green  Orange  Yellow  Mint   Blue   Gray   Purple  Orange  Forest  Blue
+
+Step 28: Pour tube 9 into tube 5
+ 1     2      3      4      5      6       7      8     9      10      11      12      13     14 
+---  ------  ----  -----  -----  ------  ------  ----  ----  ------  ------  ------  ------  ----
+Red          Pink  Brown          Gray                       Orange  Purple   Sky    Forest      
+Red  Orange  Pink  Brown  Green   Gray   Yellow  Mint         Sky    Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown  Green   Gray   Yellow  Mint         Sky    Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Green  Orange  Yellow  Mint  Blue   Gray   Purple  Orange  Forest  Blue
+
+Step 29: Pour tube 9 into tube 14
+ 1     2      3      4      5      6       7      8    9    10      11      12      13     14 
+---  ------  ----  -----  -----  ------  ------  ----  -  ------  ------  ------  ------  ----
+Red          Pink  Brown          Gray                    Orange  Purple   Sky    Forest  Blue
+Red  Orange  Pink  Brown  Green   Gray   Yellow  Mint      Sky    Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown  Green   Gray   Yellow  Mint      Sky    Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Green  Orange  Yellow  Mint      Gray   Purple  Orange  Forest  Blue
+
+Step 30: Pour tube 10 into tube 2
+ 1     2      3      4      5      6       7      8    9   10     11      12      13     14 
+---  ------  ----  -----  -----  ------  ------  ----  -  ----  ------  ------  ------  ----
+Red  Orange  Pink  Brown          Gray                          Purple   Sky    Forest  Blue
+Red  Orange  Pink  Brown  Green   Gray   Yellow  Mint     Sky   Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown  Green   Gray   Yellow  Mint     Sky   Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Green  Orange  Yellow  Mint     Gray  Purple  Orange  Forest  Blue
+
+Step 31: Pour tube 10 into tube 9
+ 1     2      3      4      5      6       7      8     9    10     11      12      13     14 
+---  ------  ----  -----  -----  ------  ------  ----  ---  ----  ------  ------  ------  ----
+Red  Orange  Pink  Brown          Gray                            Purple   Sky    Forest  Blue
+Red  Orange  Pink  Brown  Green   Gray   Yellow  Mint             Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown  Green   Gray   Yellow  Mint  Sky        Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+
+Step 32: Pour tube 6 into tube 10
+ 1     2      3      4      5      6       7      8     9    10     11      12      13     14 
+---  ------  ----  -----  -----  ------  ------  ----  ---  ----  ------  ------  ------  ----
+Red  Orange  Pink  Brown                                    Gray  Purple   Sky    Forest  Blue
+Red  Orange  Pink  Brown  Green          Yellow  Mint       Gray  Purple   Sky    Forest  Blue
+Red  Green   Pink  Brown  Green          Yellow  Mint  Sky  Gray  Purple  Yellow  Forest  Blue
+Red   Mint   Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+
+Step 33: Pour tube 2 into tube 6
+ 1     2     3      4      5      6       7      8     9    10     11      12      13     14 
+---  -----  ----  -----  -----  ------  ------  ----  ---  ----  ------  ------  ------  ----
+Red         Pink  Brown                                    Gray  Purple   Sky    Forest  Blue
+Red         Pink  Brown  Green  Orange  Yellow  Mint       Gray  Purple   Sky    Forest  Blue
+Red  Green  Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Yellow  Forest  Blue
+Red   Mint  Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+
+Step 34: Pour tube 2 into tube 5
+ 1    2     3      4      5      6       7      8     9    10     11      12      13     14 
+---  ----  ----  -----  -----  ------  ------  ----  ---  ----  ------  ------  ------  ----
+Red        Pink  Brown  Green                             Gray  Purple   Sky    Forest  Blue
+Red        Pink  Brown  Green  Orange  Yellow  Mint       Gray  Purple   Sky    Forest  Blue
+Red        Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Yellow  Forest  Blue
+Red  Mint  Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+
+Step 35: Pour tube 2 into tube 8
+ 1   2   3      4      5      6       7      8     9    10     11      12      13     14 
+---  -  ----  -----  -----  ------  ------  ----  ---  ----  ------  ------  ------  ----
+Red     Pink  Brown  Green                  Mint       Gray  Purple   Sky    Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint       Gray  Purple   Sky    Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Yellow  Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+
+Step 36: Pour tube 12 into tube 9
+ 1   2   3      4      5      6       7      8     9    10     11      12      13     14 
+---  -  ----  -----  -----  ------  ------  ----  ---  ----  ------  ------  ------  ----
+Red     Pink  Brown  Green                  Mint  Sky  Gray  Purple          Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple          Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Yellow  Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+
+Step 37: Pour tube 12 into tube 7
+ 1   2   3      4      5      6       7      8     9    10     11      12      13     14 
+---  -  ----  -----  -----  ------  ------  ----  ---  ----  ------  ------  ------  ----
+Red     Pink  Brown  Green          Yellow  Mint  Sky  Gray  Purple          Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple          Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple          Forest  Blue
+Red     Pink  Brown  Green  Orange  Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+
+Step 38: Pour tube 6 into tube 12
+ 1   2   3      4      5    6    7      8     9    10     11      12      13     14 
+---  -  ----  -----  -----  -  ------  ----  ---  ----  ------  ------  ------  ----
+Red     Pink  Brown  Green     Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+Red     Pink  Brown  Green     Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+Red     Pink  Brown  Green     Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+Red     Pink  Brown  Green     Yellow  Mint  Sky  Gray  Purple  Orange  Forest  Blue
+
+Num moves: 38
